@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         DDG Shortcuts
-// @version      1.2.0
+// @version      1.2.1
 // @description  Adds DuckDuckGo keyboard shortcuts to other search engines
 // @author       ReimarPB
 // @match        *://*/*
 // @namespace    https://reimarpb.com/userscripts
 // @grant        none
+// @noframes
 // ==/UserScript==
 
 (function() {
