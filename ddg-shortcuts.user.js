@@ -325,8 +325,6 @@
 		// Called when the user presses down/up
 		function resultUpdated() {
 
-			console.log(resultLinks[resultIndex]);
-
 			// Remove old hover effect
 			if (selectors.resultHoverClass) {
 				var old = document.querySelector("." + selectors.resultHoverClass + selectors.resultHoverElem);
