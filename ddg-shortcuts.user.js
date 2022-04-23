@@ -212,20 +212,20 @@
 	// The CSS selectors for each search engine to get different parts of the page
 	var selectors = {
 		google: {
-			input:			  "input[name=q]",
-			tab:			  ".hdtb-mitem a, .hdtb-mitem.hdtb-msel, .T47uwc > a, .T47uwc > span",
-			currentTab:		  ".hdtb-mitem.hdtb-msel, .rQEFy.NZmxZe",
+			input:            "input[name=q]",
+			tab:              ".hdtb-mitem a, .hdtb-mitem.hdtb-msel, .T47uwc > a, .T47uwc > span",
+			currentTab:       ".hdtb-mitem.hdtb-msel, .rQEFy.NZmxZe",
 			resultHoverElem:  ".LC20lb.MBeuO.DKV0Md",
 			resultHoverClass: "AraNOb",
-			resultLink:		  ".yuRUbf a",
+			resultLink:       ".yuRUbf a",
 		},
 		startpage: {
-			input:			  "#q",
-			tab:			  ".inline-nav-menu__link__post-link, .css-dkelex",
-			currentTab:		  ".inline-nav-menu__link__post-link.inline-nav-menu__link__active, .css-156jy2m button",
+			input:            "#q",
+			tab:              ".inline-nav-menu__link__post-link, .css-dkelex",
+			currentTab:       ".inline-nav-menu__link__post-link.inline-nav-menu__link__active, .css-156jy2m button",
 			resultHoverElem:  ".w-gl__result",
 			resultHoverClass: "linkHover",
-			resultLink:		  ".w-gl__result-title.result-link",
+			resultLink:       ".w-gl__result-title.result-link",
 		},
 	};
 
