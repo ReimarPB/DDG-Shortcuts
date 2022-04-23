@@ -9,3 +9,4 @@ A userscript that adds the keyboard shortcuts from DuckDuckGo to other search en
 Currently supported search engines:
 * [Google](https://google.com)
 * [Startpage](https://startpage.com)
+* [Brave Search](https://search.brave.com)

@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         DDG Shortcuts
-// @version      1.0.0
+// @version      1.1.0
 // @description  Adds DuckDuckGo keyboard shortcuts to other search engines
 // @author       ReimarPB
 // @match        https://www.startpage.com/sp/search*
+// @match        https://search.brave.com/*
 // @match        https://www.google.com/search*
 // @match        https://www.google.ac/search*
 // @match        https://www.google.ad/search*
@@ -227,6 +228,12 @@
 			resultHoverClass: "linkHover",
 			resultLink:       ".w-gl__result-title.result-link",
 		},
+		brave: {
+			input:            "#searchbox",
+			tab:              ".tab-item > a",
+			currentTab:       ".tab-item.active > a",
+			resultLink:       ".result-header",
+		}
 	};
 
 	// Get selectors for this search engine
@@ -248,6 +255,7 @@
 		if (selectors.resultHoverElem) var resultHoverElems = document.querySelectorAll(selectors.resultHoverElem);
 		var resultLinks = document.querySelectorAll(selectors.resultLink);
 		var searchField = document.querySelector(selectors.input);
+		var currentResult = resultLinks[resultIndex === -1 ? 0 : resultIndex]; // Default to first result if none selected
 
 		switch (event.key) {
 
@@ -263,7 +271,7 @@
 				searchField.value = searchField.value
 					.replace(/site:\S+/g, "")
 					.replace(/\s+$/, "")
-					+ " site:" + resultLinks[resultIndex].host;
+					+ " site:" + currentResult.host;
 				searchField.form.submit();
 				break;
 
@@ -276,13 +284,13 @@
 					preventDefault = false;
 					break;
 				}
-				location.href = resultLinks[resultIndex].href;
+				location.href = currentResult.href;
 				break;
 
 			// Open link in new tab
 			case "'":
 			case "v":
-				open(resultLinks[resultIndex].href, "_blank");
+				open(currentResult.href, "_blank");
 				break;
 
 			// Scroll to top
